@@ -28,6 +28,16 @@ Go to **Habitica → Settings → API** and copy your:
 
 ### 2. Install dependencies
 
+**macOS (Homebrew Python)** — use a virtual environment to avoid the "externally-managed-environment" error:
+
+```bash
+cd /path/to/habitica-mcp
+python3 -m venv .venv
+.venv/bin/pip install mcp httpx pydantic
+```
+
+**Other systems** (Linux, Windows, non-Homebrew Python):
+
 ```bash
 pip install mcp httpx pydantic
 ```
@@ -35,6 +45,25 @@ pip install mcp httpx pydantic
 ### 3. Add to your Claude Desktop config
 
 Edit `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS) or `%APPDATA%\Claude\claude_desktop_config.json` (Windows):
+
+**macOS with venv:**
+
+```json
+{
+  "mcpServers": {
+    "habitica": {
+      "command": "/absolute/path/to/habitica-mcp/.venv/bin/python3",
+      "args": ["/absolute/path/to/habitica-mcp/habitica_mcp.py"],
+      "env": {
+        "HABITICA_USER_ID": "your-user-id-here",
+        "HABITICA_API_KEY": "your-api-token-here"
+      }
+    }
+  }
+}
+```
+
+**Other systems:**
 
 ```json
 {
