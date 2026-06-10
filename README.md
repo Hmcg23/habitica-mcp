@@ -83,16 +83,8 @@ Once connected to Claude, try:
 
 ---
 
-## Building something similar
+## Refrences
 
-Want to build an MCP for a different todo or productivity app? The pattern is the same:
-
-1. Create a `FastMCP` server
-2. Add environment-variable-based auth
-3. Wrap each API endpoint as a `@mcp.tool`
-4. Add to your Claude Desktop config
-
-Good starting points:
 - [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk)
 - [MCP documentation](https://modelcontextprotocol.io)
 - [Habitica API docs](https://habitica.com/apiv3/)
